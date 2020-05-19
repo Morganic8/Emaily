@@ -5,7 +5,7 @@ import * as actions from '../actions';
 class Payments extends Component {
   //"Token" is given from Stripe
   render() {
-    console.log(process.env.REACT_APP_STRIPE_KEY)
+
     return (
       <StripeCheckout
         name="Emaily"
