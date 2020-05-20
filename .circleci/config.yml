@@ -22,5 +22,5 @@ workflows:
         - heroku/deploy-via-git:
             context: Heroku_Context
             post-deploy:
-              type: steps
-              default: ["NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"]
+              steps:
+              - run: NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client
