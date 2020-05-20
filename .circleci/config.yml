@@ -21,4 +21,4 @@ workflows:
       jobs:
         - heroku/deploy-via-git:
             context: Heroku_Context
-            
+          - run: heroku-postbuild
