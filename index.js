@@ -4,8 +4,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
-//fire off passport
+
+//fire off MongoDB models
 require('./models/User');
+require('./models/Survey');
+//fire off passport
 require('./services/passport');
 
 //mongoose options
@@ -29,7 +32,8 @@ app.use(passport.session());
 
 //google auth route
 require('./routes/authRoutes')(app);
-require('./routes/billingRoutes')(app)
+require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   //Express will serve production assets
